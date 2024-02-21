@@ -15,7 +15,8 @@ from copy import copy
 from functools import wraps
 from oauthlib.common import to_unicode, add_params_to_uri
 from flask import request, redirect, json, session, current_app
-from werkzeug.urls import url_quote, url_decode, url_encode
+from urllib.parse import quote as url_quote
+from werkzeug.urls import url_decode, url_encode
 from werkzeug.http import parse_options_header
 from werkzeug.utils import cached_property
 from .utils import to_bytes
