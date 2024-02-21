@@ -13,7 +13,7 @@ import oauthlib.oauth1
 import oauthlib.oauth2
 from copy import copy
 from functools import wraps
-from oauthlib.common import to_unicode, PY3, add_params_to_uri
+from oauthlib.common import to_unicode, add_params_to_uri
 from flask import request, redirect, json, session, current_app
 from werkzeug.urls import url_quote, url_decode, url_encode
 from werkzeug.http import parse_options_header
@@ -28,11 +28,7 @@ except ImportError:
 log = logging.getLogger('flask_oauthlib')
 
 
-if PY3:
-    string_types = (str,)
-else:
-    string_types = (str, unicode)
-
+string_types = (str,)
 
 __all__ = ('OAuth', 'OAuthRemoteApp', 'OAuthResponse', 'OAuthException')
 
